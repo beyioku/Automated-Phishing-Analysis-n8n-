@@ -98,10 +98,3 @@ It integrates **Outlook**, **URLScan.io**, **VirusTotal**, and **Slack** to dete
 ![Slack Notification](images/slack.png)
 ---
 
-## 📥 Setup
-
-1. Clone this repo:
-   ```bash
-   git clone https://github.com/YOUR-USERNAME/phishing-analysis-n8n.git
-   cd phishing-analysis-n8n
-
