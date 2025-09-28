@@ -1,4 +1,4 @@
-#️ Automated Phishing Analysis Workflow (n8n + URLScan.io + VirusTotal)
+## Automated Phishing Analysis Workflow (n8n + URLScan.io + VirusTotal)
 
 This project contains an **end-to-end automated phishing detection workflow** built with [n8n](https://n8n.io).  
 It integrates **Outlook**, **URLScan.io**, **VirusTotal**, and **Slack** to detect, analyze, and report suspicious URLs found in phishing emails.
@@ -95,7 +95,7 @@ It integrates **Outlook**, **URLScan.io**, **VirusTotal**, and **Slack** to dete
 
 📸 Screenshot:  
 ![Slack Flow](images/send%20slack%20diagram.png)
-
+![Slack Notification](images/slack.png)
 ---
 
 ## 📥 Setup
