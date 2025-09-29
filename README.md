@@ -59,8 +59,8 @@ By completing this project, I gained hands-on experience in:
 ### 1. **Schedule Trigger**
 Using a schedule ensures the workflow runs consistently without manual intervention. Manual trigger is useful when testing API integrations, or Slack formatting without waiting for the next cycle.  
 
-- **Schedule Trigger** → Runs every 5 minutes (configurable).  
-- **Manual Trigger** → For on-demand execution.
+- **Schedule Trigger** - Runs every 5 minutes (configurable).  
+- **Manual Trigger** - For on-demand execution.
 
  Screenshot: 
 ![Schedule Trigger](images/ScheduleTrigger.png)
@@ -71,7 +71,7 @@ Using a schedule ensures the workflow runs consistently without manual intervent
 This stage ensures the workflow only analyzes fresh phishing emails and avoids duplicate reporting. Using Outlook OAuth2 ensures secure access to the mailbox.  
 
 - **Get all unread messages** (Outlook).  
-- **Mark as read** → Ensures no duplicate processing.  
+- **Mark as read** - Ensures no duplicate processing.  
 
 📸 Screenshot:  
 ![Unread Messages](images/GetallUnreadMessages.png)  
@@ -154,4 +154,28 @@ Slack provides instant visibility to the security team. Formatting the alert wit
 ![Slack Message Text](images/slacktext.png)
 ![Slack Notification](images/slack.png)
 ---
+
+## Limitations & Future Improvements
+
+While this workflow demonstrates a functional phishing analysis pipeline, there are several limitations and areas where it could be improved:
+
+### Current Limitations
+- **IOC Scope** - Only URLs are extracted; other IOCs like attachments, IP addresses, or domains are not analyzed.  
+- **False Positives** - Regex extraction may capture safe URLs (e.g., internal links) and send them for unnecessary scanning.  
+- **Error Handling** - URLScan/VirusTotal failures are partially handled, but additional retries and logging could make the workflow more robust.  
+- **Scalability** - Designed for a single mailbox and moderate email volume; may need optimization for enterprise-scale deployment.  
+- **Contextual Enrichment** - Reports are limited to URLScan.io and VirusTotal verdicts; no integration with threat intel platforms (e.g., AbuseIPDB, OTX, MISP).  
+
+### Future Improvements
+- **Broader IOC Coverage** - Add additional support for extracting attachments, hashes, and suspicious sender domains.  
+- **Threat Intelligence Enrichment** - Enrich reports with external feeds (AbuseIPDB, AlienVault OTX, MISP) for richer context.  
+- **Enhanced Slack Reporting** - Include screenshots inline, add severity scoring, and group multiple IOCs per email into a single summary.  
+- **Database/Case Management Integration** - Store results in a SIEM, SOAR, or case management system (TheHive, Splunk, ELK).  
+- **Advanced Filtering** - Use allow/block lists or machine learning models to reduce noise from benign URLs.  
+- **Multi-Channel Alerts** - Extend notifications beyond Slack (e.g., Teams, Email, PagerDuty).  
+
+---
+
+
+
 
